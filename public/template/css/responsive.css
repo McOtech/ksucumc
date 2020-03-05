@@ -1,0 +1,264 @@
+@media (max-width:1199px){
+    .header_area .navbar .nav .nav-item .nav-link{
+        margin-right: 30px;
+    }
+    .features_item {
+        padding: 50px 20px 55px 20px;
+    }
+    .sermons_slider .owl-dots{
+        position: relative;
+        right: 290px;
+        bottom: -19px;
+    }
+	.contact_area .col-md-3{
+		flex: 0 0 100%;
+		max-width: 100%;
+		margin-bottom: 30px;
+	}
+	.contact_area .col-md-9{
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+
+@media (max-width:991px){
+    .navbar-toggler {
+        border: none;
+        border-radius: 0px;
+        padding: 0px;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
+		opacity: 1;
+	}
+	.navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+		opacity: 0;
+	}
+	.navbar-toggler[aria-expanded="true"] span:first-child {
+		transform: rotate(-45deg);
+		position: relative;
+		top: 7.5px;
+	}
+	.navbar-toggler[aria-expanded="true"] span:last-child {
+		transform: rotate(45deg);
+		bottom: 6px;
+		position: relative;
+	}
+	.navbar-toggler span{
+		display: block;
+		width: 25px;
+		height: 3px;
+		background: #00c8e6;
+		margin: auto;
+		margin-bottom: 4px;
+		transition: all 400ms linear;
+		cursor: pointer;
+	}
+    .header_area + section {
+        margin-top: 91px;
+    }
+    .navbar .container{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .nav{
+        background: #fff;
+        padding: 0px 15px;
+    }
+    .header_top .nav{
+        padding: 0px;
+    }
+    .header_area .navbar .nav .nav-item .nav-link{
+        line-height: 35px;
+        margin-right: 0px;
+        display: block;
+    }
+    .header_area .navbar .search{
+        margin-left: 0px;
+    }
+    .about_content {
+        padding-right: 0;
+    }
+    .sermons_slider .sermons_content{
+        padding-right: 0px;
+        margin-top: 30px;
+    }
+    .section_title{
+        margin-bottom: 50px;
+    }
+    .donation_form h3 {
+        font-size: 15px;
+        padding-bottom: 13px;
+    }
+    .donation_form{
+        padding: 40px 5px 50px;
+    }
+    .donate_content h2{
+        font-size: 27px;
+        line-height: 35px;
+    }
+    .event_title {
+        font-size: 20px;
+    }
+    .single-footer-widget{
+        margin-top: 40px;
+    }
+    .blog_banner .banner_content{
+        margin: 200px 0px 120px;
+    }
+    .categories_post img{
+        width: 100%;
+    }
+    .blog_categorie_area .col-lg-4 + .col-lg-4{
+        margin-top: 40px;
+    }
+    .blog_area{
+        padding-bottom: 80px;
+    }
+    .single-post-area .blog_right_sidebar{
+        margin-top: 30px;
+    }
+	.header_area .navbar-collapse{
+		max-height: 340px;
+		overflow-y: scroll;
+	}
+	.header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
+		padding: 0px 15px;
+	}
+}
+@media (max-width:767px){
+    .banner_content h1{
+        font-size: 40px;
+        line-height: 60px;
+        padding-top: 0px;
+    }
+    .banner_content p br{
+        display: none;
+    }
+    .header_top .top_btn a{
+        padding: 0px 10px;
+    }
+    .banner_area {
+        min-height: 560px;
+    }
+    .event_time{
+        margin-top: 50px;
+    }
+    .section_gap{
+        padding: 80px 0px;
+    }
+    .about_content{
+        padding-bottom: 50px;
+    }
+    .donate_content{
+        padding-bottom: 50px;
+    }
+    .donate_content h2{
+        font-size: 30px;
+    }
+    .donation_form{
+        padding: 40px 25px 50px;
+    }
+    .event_post{
+        margin-bottom: 40px;
+    }
+    .event_post img{
+        width: 100%;
+    }
+    .footer-bottom .footer-social a{
+        margin-left: 15px;
+    }
+    .event_details_area .event_category {
+        padding-top: 40px;
+    }
+    .gallery_item img{
+        width: 100%;
+    }
+    .blog_banner .banner_content h4 {
+        font-size: 48px;
+        line-height: 58px;
+        margin-bottom: 20px;
+    }
+    .blog_info{
+        text-align: left !important;
+        padding-top: 0px;
+        padding-bottom: 10px;
+    }
+    .blog_meta li{
+        display: inline-block;
+        width: calc(95%/ 2);
+    }
+    .single-post .blog_info{
+        padding-top: 30px;
+        padding-bottom: 0px;
+    }
+    .single-post-area .social-links{
+        padding-left: 0px;
+        margin-bottom: 0px;
+    }
+    .comment-form .email {
+        margin-bottom: 0px;
+    }
+    .contact_form{
+        margin-top: 30px;
+    }
+}
+@media (max-width:576px){
+    .banner_content h1 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 0px;
+    }
+    .donation_form .form-group{
+        width: 50%;
+    }
+    .footer-bottom,.footer-bottom .footer-social{
+        text-align: center;
+    }
+    .donate_content h2 br{
+        display: none;
+    }
+    .sermons_slider .owl-dots {
+        position: relative;
+        right: auto;
+        bottom: -29px;
+        text-align: center;
+    }
+    .team_item .team_img img{
+        width: 100%;
+    }
+    .blog_banner .banner_content h4 {
+        font-size: 36px;
+        line-height: 46px;
+    }
+	.header_area .navbar-collapse{
+		max-height: 250px;
+		overflow-y: scroll;
+	}
+}
+
+@media (max-width:480px){
+    .header_top .col-7{
+        display: none !important;
+    }
+    .header_top .col-5{
+        max-width: 100%;
+        flex: 1;
+        text-align: center;
+    }
+    .comments-area .comment-list.left-padding {
+        padding-left: 5px;
+    }
+    .comments-area .thumb{
+        margin-right: 5px;
+    }
+    .comments-area .btn-reply{
+        padding: 0px 8px;
+    }
+    .page-cover-tittle {
+        font-size: 32px;
+        line-height: 55px;
+    }
+}

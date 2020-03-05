@@ -1,0 +1,67 @@
+/*
+Theme Name: Deccal
+Theme URI: https://themeforest.net/user/webredox/portfolio
+Author: webRedox Team
+Author URI: http://themeforest.net/user/webRedox
+Website: http://webredox.net
+Description: Deccal - Video Blogging WordPress Theme
+Version: 1.0
+Tags: four-columns, custom-background, custom-colors, featured-images, theme-options
+Text Domain: deccal
+License:
+License URI:
+*/
+.wp-caption {
+	margin-bottom: 1.75em;
+	max-width: 100%;
+}
+.wp-caption-text{
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: opacity 0.24s ease-in-out;
+	-moz-transition: opacity 0.24s ease-in-out;
+	transition: opacity 0.24s ease-in-out;
+}
+.sticky {
+	color: #000;
+}
+.gallery-caption {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: opacity 0.24s ease-in-out;
+	-moz-transition: opacity 0.24s ease-in-out;
+	transition: opacity 0.24s ease-in-out;
+}
+.bypostauthor {
+	color:#000;
+}
+.alignleft {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.alignright {
+    display: block;
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    clear: both;
+    margin-bottom: 15px;
+}
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	/* many screen reader and browser combinations announce broken words as they would appear visually */
+	word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  color:#000;	
+}
