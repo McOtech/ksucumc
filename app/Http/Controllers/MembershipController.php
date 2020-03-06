@@ -38,18 +38,31 @@ class MembershipController extends Controller
         $user = User::where('username', $data['username'])->first();
         try {
             if($user->profile->phone != null){
-                Membership::create([
-                    'user_id' => $user->id,
-                    'cohort_id' => $data['cohort_id'],
-                    'post' => $data['post'],
-                    'right' => $right
-                ]);
+                if ($data['post'] == 'admin') {
+                    $cohorts = Cohort::all();
+                    foreach ($cohorts as $key => $cohort) {
+                        Membership::create([
+                            'user_id' => $user->id,
+                            'cohort_id' => $cohort->id,
+                            'post' => $data['post'],
+                            'right' => $right
+                        ]);
+                    }
+                }else {
+                    Membership::create([
+                        'user_id' => $user->id,
+                        'cohort_id' => $data['cohort_id'],
+                        'post' => $data['post'],
+                        'right' => $right
+                    ]);
+                }
+
                 $message['success'] = 'Request sent successfully';
             }else {
                 $message['error'] = 'Request sent failed. Fill the information required in profile then try again.';
             }
         } catch (\Throwable $th) {
-            $message['error'] = 'Request sent failed' . $th->getMessage();
+            $message['error'] = 'Request sent failed ' . $th->getMessage();
         }
         $messageBag = new MessageBag($message);
 
@@ -69,14 +82,28 @@ class MembershipController extends Controller
                 'right' => ['required', 'string'],
                 'post' => ['required', 'string']
             ]);
-            if($leader->update([
-                'right' => $data['right'],
-                'post' => $data['post']
-            ])){
-                $message['success'] = 'Leadership Update Successful.';
+            if ($data['post'] == 'admin') {
+                try {
+                    Membership::where('user_id', $leader->user_id)->update([
+                        'right' => $data['right'],
+                        'post' => $data['post']
+                    ]);
+                    $message['success'] = 'Leadership Update Successful.';
+                } catch (\Throwable $th) {
+                    $message['error'] = 'Leadership Update Failed.';
+                }
+
             }else {
-                $message['error'] = 'Leadership Update Failed.';
+                if($leader->update([
+                    'right' => $data['right'],
+                    'post' => $data['post']
+                ])){
+                    $message['success'] = 'Leadership Update Successful.';
+                }else {
+                    $message['error'] = 'Leadership Update Failed.';
+                }
             }
+
             $messageBag = new MessageBag($message);
             return redirect()->route('profile.edit', ['user' => auth()->user()->id])->withErrors($messageBag);
         }else {
@@ -130,11 +157,23 @@ class MembershipController extends Controller
 
     public function delete(Membership $leader){
         $message = [];
-        if($leader->delete()){
-            $message['success'] = 'Leadership Terminated.';
+        if ($leader->post == 'admin') {
+            $user_id = $leader->user_id;
+
+            try {
+                Membership::where('user_id', $user_id)->delete();
+                $message['success'] = 'Leadership Terminated.';
+            } catch (\Throwable $th) {
+                $message['error'] = 'Leadership Terminate Failed.';
+            }
         }else {
-            $message['error'] = 'Leadership Terminate Failed.';
+            if($leader->delete()){
+                $message['success'] = 'Leadership Terminated.';
+            }else {
+                $message['error'] = 'Leadership Terminate Failed.';
+            }
         }
+
         $messageBag = new MessageBag($message);
         return redirect()->route('leader.create')->withErrors($messageBag);
     }

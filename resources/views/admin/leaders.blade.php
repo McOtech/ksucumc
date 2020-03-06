@@ -92,9 +92,6 @@
                                                     </button>
                                                 </form>
                                             </span>
-                                            {{-- <a href="javascript:void(0)" >
-
-                                            </a> --}}
                                             </div>
                                         </td>
                                         <td>
@@ -167,6 +164,7 @@
                                 <div class="col-md-6">
                                     <select name="cohort_id" id="cohort_id" class="form-control form-control-user p-1 @error('cohort_id') is-invalid @enderror" required>
                                         <option selected>-----SELECT COHORT-----</option>
+                                        <option value="0" selected>Super User</option>
                                         @if ($cohorts != null)
                                             @foreach($cohorts as $cohort)
                                                 <option value="{{$cohort->id}}">{{$cohort->name}}</option>
@@ -182,6 +180,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <select name="post" id="post" class="form-control form-control-user p-1 @error('post') is-invalid @enderror">
+                                        <option value="admin">Administrator</option>
                                         <option value="overseer">Overseer</option>
                                         <option value="chairperson" selected>Chairperson</option>
                                         <option value="secretary">Secretary</option>
